@@ -37,7 +37,12 @@ const App = () => {
     setTodos(newTodos)
   }
 
-
+  function handleKeydown(event) {
+    if (event.key === 'Enter') {
+      handleAddTodo();
+    }
+  }
+  
   function handleAddTodo() {
     const name = todoNameRef.current.value
     if (name === '') return
@@ -45,12 +50,12 @@ const App = () => {
       return [...prevTodos, { id: uuidv4(), name: name, complete:false}]
     })
     todoNameRef.current.value=null
-
   }
+
   return (
     <>
 
-    <input ref={todoNameRef} type="text" />
+    <input ref={todoNameRef} type="text" onKeyDown={handleKeydown}/>
     <button onClick={handleAddTodo}>Add Todo</button>
     <button onClick={handleClearCompletedTodos}>Clear Completed Todos</button> 
     <div> You have {todos.filter(todo => !todo.complete).length} todos to complete</div>
