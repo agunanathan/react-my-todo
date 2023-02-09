@@ -15,6 +15,7 @@ export default function Todo({todo, toggleTodo, editTodo, deleteTodo}) {
             {todo.name}
       </label>
       <button onClick={handleDeleteTodo}>Delete</button>
+      <button>Edit</button>
     </div>
   )
 }
