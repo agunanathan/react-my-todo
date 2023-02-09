@@ -42,7 +42,7 @@ const App = () => {
       handleAddTodo();
     }
   }
-  
+
   function handleAddTodo() {
     const name = todoNameRef.current.value
     if (name === '') return
@@ -54,8 +54,7 @@ const App = () => {
 
   return (
     <>
-
-    <input ref={todoNameRef} type="text" onKeyDown={handleKeydown}/>
+    <input aria-label='input todo' ref={todoNameRef} type="text" onKeyDown={handleKeydown} autoFocus/>
     <button onClick={handleAddTodo}>Add Todo</button>
     <button onClick={handleClearCompletedTodos}>Clear Completed Todos</button> 
     <div> You have {todos.filter(todo => !todo.complete).length} todos to complete</div>
