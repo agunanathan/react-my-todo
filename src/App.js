@@ -1,4 +1,4 @@
-import TodoList from "./components/TodoList";
+import TodoList from "./TodoList";
 import "./App.css";
 
 const App = () => {
